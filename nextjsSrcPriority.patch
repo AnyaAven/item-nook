@@ -1,0 +1,22 @@
+Index: node_modules/next/dist/lib/find-pages-dir.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/node_modules/next/dist/lib/find-pages-dir.js b/node_modules/next/dist/lib/find-pages-dir.js
+--- a/node_modules/next/dist/lib/find-pages-dir.js	(revision f1bbd79855e730905234444d2d40086ded3d6ccf)
++++ b/node_modules/next/dist/lib/find-pages-dir.js	(date 1722706131069)
+@@ -28,10 +28,10 @@
+     };
+ }
+ function findDir(dir, name) {
+-    // prioritize ./${name} over ./src/${name}
+-    let curDir = _path.default.join(dir, name);
++    // prioritize ./src/${name} over ./${name}
++    let curDir = _path.default.join(dir, "src", name);
+     if (_fs.default.existsSync(curDir)) return curDir;
+-    curDir = _path.default.join(dir, "src", name);
++    curDir = _path.default.join(dir, name);
+     if (_fs.default.existsSync(curDir)) return curDir;
+     return null;
+ }
