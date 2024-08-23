@@ -17,8 +17,12 @@ class DatabaseDataSeeder extends Seeder
     {
         User::factory(10)->create();
 
-        Space::factory()->count(6)->create();
+        // Empty space
+        Space::factory()->count(1)->create();
 
-        Item::factory()->count(8)->create();
+        Space::factory()
+            ->state(['name' => 'Factory Space'])
+            ->has(Item::factory()->count(6))
+            ->create();
     }
 }

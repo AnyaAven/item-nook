@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('items', function(Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(Space::class)->constrained();
             $table->text('description')->nullable();
             $table->text('notes')->nullable();
             $table->string('name');
