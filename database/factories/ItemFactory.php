@@ -41,7 +41,7 @@ class ItemFactory extends Factory
             'description' => fake()->sentence(),
             'notes'       => fake()->paragraph(),
             'image_path'  => fake()->image(),
-            'custom_data' => json_encode($customData),
+            'custom_data' => $customData,
         ];
     }
 }
